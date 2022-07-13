@@ -1,0 +1,22 @@
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-top h-100">
+        <div class="col col-xl-10">
+  
+          <div class="card">
+            <div class="card-body p-5">
+  
+              <form [formGroup]="todoForm"class="d-flex justify-content-center align-items-center" (ngSubmit)="Submit()">
+                <div class="form-outline flex-fill">
+                  <input type="text" id="form2" class="form-control" formControlName="todonew"/>
+                  <label class="form-label" for="form2">New task...</label>
+                  <!-- {{this.todoForm.value.arr}} -->
+                </div>
+                <button type="submit" class="btn btn-info ms-2">Add</button>
+            </form>
+            </div>
+            
+        </div>
+    </div>
+    </div>  
+</div>

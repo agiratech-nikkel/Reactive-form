@@ -1,0 +1,42 @@
+<section class="vh-100 gradient-custom">
+  <div class="container py-5 h-100">
+<div class="row d-flex justify-content-center align-items-top h-100">
+<form [formGroup]="userForm" (ngSubmit)="submit()">
+    <div class="form-row">
+      <div class="col-md-4 mb-3">
+        <label for="validationDefault01">First name</label>
+        <input formControlName="firstName" type="text" class="form-control" id="validationDefault01" placeholder="First name" required>
+        <p *ngIf="userForm.controls['firstName'].touched && userForm.controls['firstName'].invalid" class="text-danger">please enter valide FristName</p>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="validationDefault02">Last name</label>
+        <input formControlName="lastName" type="text" class="form-control" id="validationDefault02" placeholder="Last name" required>
+        <p *ngIf="userForm.controls['lastName'].touched && userForm.controls['lastName'].invalid" class="text-danger">please enter valide LastName</p>
+    </div>
+    <div class="col-md-4 mb-3">
+        <label for="validationDefault02">email</label>
+        <input formControlName="email" type="text" class="form-control" id="validationDefault02" placeholder="email" required>
+        <p *ngIf="userForm.controls['email'].touched && userForm.controls['email'].invalid" class="text-danger">please enter valide FristName</p>
+    </div>
+    </div>
+    <div class="form-row" formGroupName="address">
+        <div class="col-md-3 mb-3">
+            <label for="validationDefault05">Address</label>
+            <input formControlName="lineOne" type="text" class="form-control" id="validationDefault03" placeholder="House:no/Flate:no" required>
+        </div>
+      <div class="col-md-3 mb-3">
+        <input  formControlName="lineTwo" type="text" class="form-control" id="validationDefault04" placeholder="StreetName/AreaName" required>
+      </div>
+      <div class="col-md-3 mb-3">
+        <input  formControlName="lineThree" type="text" class="form-control" id="validationDefault05" placeholder="District" required>
+      </div>
+      <div class="col-md-3 mb-3">
+        <input  formControlName="lineFour" type="text" class="form-control" id="validationDefault05" placeholder="State" required>
+      </div>
+      <p *ngIf="userForm.controls['address'].touched && userForm.controls['address'].invalid" class="text-danger">please enter your Address correctly!</p>
+    </div>
+    <button [disabled]="!userForm.valid" class="btn btn-primary" type="submit">Submit form</button>
+  </form>
+</div>
+</div>
+</section>
